@@ -4,7 +4,12 @@
  * Part I: use any of the looping methods discussed in class
  *
  * 1. for loop,
+
  * 2. Array.forEach,
+ //Here are some tips learned from class review:
+ //args.forEach(function (currItem, idx, arr) {}
+ //or forEach(args, function(currItem, idx, arr)) {}
+
  * 3. custom forEach
  *
  * to complete the following problems
@@ -107,11 +112,13 @@ longest("this", "is", "a", "awesome", "function");
  */
 
 // .sort()
+//This will sort the items alphabetically
 var names = ["steve", "Barry", "kristi", "Norma"]
 names.sort();
 console.assert(names === "Barry", "krista", "Norma", "Steve")
 
 // .concat()
+//This will combine arrays adding to the end of the first one called
 var redCrayons = ["maroon", "fire"];
 var yellowCrayons = ["lightbulb", "schoolbus"];
 var newCrayonColor = redCrayons.concat(yellowCrayons);
@@ -119,49 +126,60 @@ console.log(newCrayonColor);
 console.assert(newCrayonColor === "maroon", "fire", "lightbulb", "schoolbus")
 
 // .indexOf()
+//This will allow you to find the particular index of a value in an array
 var numbers = [1,3,5,7,9];
 var x = numbers.indexOf(3);
 console.assert(x === 1)
 
 // .split()
+//This will split the array into seperate values based off of a parameter (ie "")
 var myName = "Dustin"
 var x = myName.split("");
 console.assert( x === d,u,s,t,i,n)
 
 // .join()
+//This will join the elements of an array into 1 value with a particular character (ie "-")
 var toppings = ["pepperonoi", "cheese", "onions", "bacon"];
 console.log(toppings.join ("-"));
 console.assert(toppings.join ("-") === "pepperonoi-chese-onions-bacon")
 
 // .pop()
+//Takes a value off of the last value of the array
 var toppings = ["pepperonoi", "cheese", "onions", "bacon"];
 var newToppings = toppings.pop ();
 console.log(newToppings);
 console.assert(newToppings === "bacon")
 
 // .push()
+//Adds values to the end of an existing array
 var toppings = ["pepperonoi", "cheese", "onions", "bacon"];
 var newToppings = toppings.push ("olives", "tomato");
 console.log(toppings);
 console.assert(newToppings === 6)
 
 // .slice()
+//Removes a specified value from a specific point to another in array (ex [0,2])
 var fruits = ["apple", "pear", "orange", "banana"];
 console.log(fruits.slice (2,3));
 console.assert( fruits.slice (2,3)) === "orange")
 
 // .splice()
+//We can remove a specified value and insert another in its place
+//EX 4 = start value to remove, 1 = how many to remove, "Hello" = what to insert in its place
 var sentence = ["This", "is", "an", "array", "of", "sorts"];
-var removed = sentence.splice(4,5);
+var removed = sentence.splice(4,1, "hello");
 console.log(sentence);
-console.assert(removed === "of", "sorts")
+console.assert(sentence === "This", "is", "an", "array", "of", "hello")
+
 // .shift()
+//removes first value from the array
 var fruits = [ "pineapple", "banana", "strawberry", "pear"];
 var oneFruit = fruits.shift( );
 console.log(oneFruit);
 console.assert(oneFruit === "pineapple")
 
 // .unshift()
+//adds values to the beginning of the arrayLß
 var fruits = [ "pineapple", "banana" ];
 var newLength = fruits.unshift ( "strawberry", "pear" );
 console.log(fruits);
